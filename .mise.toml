@@ -1,0 +1,21 @@
+[tools]
+python = "3.13"
+
+[tasks.lint]
+description = "Format and lint code with ruff"
+run = [
+    "uv run ruff format",
+    "uv run ruff check"
+]
+
+[tasks.build]
+description = "Build standalone executable"
+run = "./build.sh"
+
+[tasks.package]
+description = "Create distribution package"
+run = "./package.sh"
+
+[tasks.test]
+description = "Test extraction with sample file"
+run = "uv run docx-extractor --help"
